@@ -20,7 +20,10 @@ def initgui():
     ]
     window = sg.Window('Compare .evt and BHist', layout)
     while True:
-        event, values = window.read()
+        try:
+            event, values = window.read()
+        except:
+            continue
         if event == 'Submit':
             if all(values) != '':
                 del values['Browse']
@@ -30,7 +33,7 @@ def initgui():
         elif event == sg.WINDOW_CLOSED:
             sys.exit()
 
-def displaylog(result, batchID):
+def displaylog(result, batchID='N/A'):
     layout = [
         [sg.T('Batch:'), sg.I(batchID, disabled=True)],
         [sg.Multiline(result,size=(145,16),horizontal_scroll=True,key='-PRINT-')],
