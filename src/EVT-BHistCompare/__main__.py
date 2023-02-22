@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-import gui
-import handledf
-
 def main():
     filters = gui.getfiles()
     evtfile = filters.pop(0)
@@ -14,5 +11,10 @@ def main():
     gui.displaylog(diff, batchid)
 
 if __name__ == '__main__':
+    import gui
+    import handledf
     while True:
         main()
+else:
+    from . import gui
+    from . import handledf
