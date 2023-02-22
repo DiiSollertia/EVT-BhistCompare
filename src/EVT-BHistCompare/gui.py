@@ -2,7 +2,7 @@ import sys
 import PySimpleGUI as sg
 import handledf
 
-def initgui():
+def getfiles():
     file_frame =[
         [sg.T('Event File (.evt)')],
         [sg.I(disabled=True,expand_x=True),sg.FileBrowse(file_types=(('Windows Event','*.evt'),),key=None)],

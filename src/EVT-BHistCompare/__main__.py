@@ -4,7 +4,7 @@ import gui
 import handledf
 
 def main():
-    filters = gui.initgui()
+    filters = gui.getfiles()
     evtfile = filters.pop(0)
     csvfile = filters.pop(1)
     filters = list(filter(filters.get, filters))
